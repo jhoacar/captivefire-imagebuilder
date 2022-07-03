@@ -1,0 +1,21 @@
+config 'global'
+        option  anon_swap       '0'
+        option  anon_mount      '0'
+        option  auto_swap       '1'
+        option  auto_mount      '1'
+        option  delay_root      '5'
+        option  check_fs        '0'
+
+config 'swap'
+        option  device  '/dev/sda2'
+        option  enabled '1'
+
+config 'mount'
+        option  target  '/mnt'
+        option  uuid    '9AFD-EC2A'
+        option  enabled '1'
+
+config 'mount'
+        option  target  '/'
+        option  uuid    '50bf9cc6-63c7-d701-10bf-9cc663c7d701'
+        option  enabled '1'

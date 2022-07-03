@@ -1,0 +1,20 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+
+#Esto redirecciona todas las peticiones HTTP hacia el servidor
+iptables -t nat -A PREROUTING -i br-lan -p tcp --dport 80 -j DNAT --to-destination 192.168.1.1:80
+#iptables -t nat -A PREROUTING -i br-lan -p tcp --dport 443 -j DNAT --to-destination 192.168.1.1:443
+
+#Estas son las rutas de redireccionamiento para habilitar el portal cautivo
+# /library/test/success.html  #APPLE
+# /hotspot-detect.html          #APPLE
+# /canonical.html                 #WINDOWS
+# /connecttest.txt                #WINDOWS
+# /ncc.txt                            #WINDOWS
+# /generate_204                #ANDROID
+# /gen_204                        #ANDROID
+
+#Este script monta al inicio el USB si lo encuentra
+#block detect > /etc/config/fstab && uci set fstab.@mount[0].target='/mnt' && uci set fstab.@mount[0].enabled='1' && uci commit && block mount
+
+exit 0
