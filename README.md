@@ -1,4 +1,4 @@
-![Logo](./assets/logo.png?raw=true "Captivefire")
+![Logo](./assets/animated_logo.gif?raw=true "Captivefire")
 
 # Image builder for OpenWRT
 
