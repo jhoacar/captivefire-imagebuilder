@@ -1,6 +1,7 @@
-![Logo](./assets/animated_logo.gif?raw=true "Captivefire")
-
-# Image builder for OpenWRT
+<h1 align="center">
+    <img src="./assets/animated_logo.gif?raw=true" alt="CaptiveFire">
+    <p>Image builder for OpenWRT</p>
+</h1>
 
 # Requirements:
 
