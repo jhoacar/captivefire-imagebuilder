@@ -1,7 +1,23 @@
+<pre>
+                                         _______                     ________        __   
+                                        |       |.-----.-----.-----.|  |  |  |.----.|  |_ 
+                                        |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
+                                        |_______||   __|_____|__|__||________||__|  |____|
+                                                 |__|                                     
+</pre>
 <h1 align="center">
     <img src="./assets/animated_logo.gif?raw=true" alt="CaptiveFire">
     <p>Image builder for OpenWRT</p>
 </h1>
+
+<pre>
+                                    ___            _   _            __ _          
+                                   / __\__ _ _ __ | |_(_)_   _____ / _(_)_ __ ___ 
+                                  / /  / _` | '_ \| __| \ \ / / _ \ |_| | '__/ _ \
+                                 / /__| (_| | |_) | |_| |\ V /  __/  _| | | |  __/   Created by - Jhoan Carrero
+                                 \____/\__,_| .__/ \__|_| \_/ \___|_| |_|_|  \___|  ( Ogre font in <a href="https://patorjk.com">https://patorjk.com</a> )
+                                            |_|                                   
+</pre>
 
 # Requirements:
 
