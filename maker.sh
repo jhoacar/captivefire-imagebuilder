@@ -2,4 +2,6 @@
 
 DEVICE="raspberry-pi/3b+";
 
-./devices/$DEVICE/maker.sh
+FILES=$(pwd)/files
+
+./devices/$DEVICE/maker.sh $FILES
