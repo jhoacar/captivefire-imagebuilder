@@ -1,0 +1,12 @@
+Package: kmod-usb-ledtrig-usbport
+Version: 4.4.182-1
+Depends: kernel (=4.4.182-1-d576400bcaea680299b5ec5f1453a6ff), kmod-usb-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Architecture: mips_24kc
+Installed-Size: 2741
+Description:  This driver allows LEDs to be controlled by USB events. Enabling this
+ trigger allows specifying list of USB ports that should turn on LED
+ when some USB device gets connected.
+ If possible it should be prefered over similar ledtrig-usbdev.

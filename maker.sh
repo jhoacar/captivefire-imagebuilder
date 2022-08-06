@@ -4,19 +4,13 @@
 
 DEVICES_FOLDER=$(pwd)/devices
 
-DEVICE="tl-mr3020/v1";
+DEVICE="tl-mr3020/v3";
 
 # Specifies the target in docker image
 DOCKER_TAG=""
 
 # Specifies the target image to build
 PROFILE=""
-
-# Show profiles for this target, 0 not show, 1 show
-SHOW_INFO=0
-
-# Execute the docker command
-EXECUTE_DOCKER_COMMAND=1
 
 DOCKER_IMAGE="openwrtorg/imagebuilder"
 
@@ -51,20 +45,18 @@ COMMAND+="BIN_DIR='$BIN_DIR' "
 COMMAND+="EXTRA_IMAGE_NAME='$EXTRA_IMAGE_NAME' "
 COMMAND+="DISABLED_SERVICES='$DISABLED_SERVICES' "
 
+EXECUTE_DOCKER_COMMAND=1
+
 # Set variables as DOCKER_TAG PROFILE and so on...
 eval $(cat $DEVICES_FOLDER/$DEVICE/maker.sh)
 
-# Show available profiles
-if [ $SHOW_INFO -eq 1 ]
-then
-    COMMAND="make info";
-fi
-
 # Execute docker command
+DOCKER_COMMAND="docker run --rm -v $HOST_FOLDER_FILES:$DOCKER_FOLDER_FILES -v $HOST_FOLDER_DEVICE:$DOCKER_FOLDER $DOCKER_IMAGE:$DOCKER_TAG bash -c \"$COMMAND\""
+
 if [ $EXECUTE_DOCKER_COMMAND -eq 1 ]
 then
-    DOCKER_COMMAND="docker run --rm -v $HOST_FOLDER_FILES:$DOCKER_FOLDER_FILES -v $HOST_FOLDER_DEVICE:$DOCKER_FOLDER $DOCKER_IMAGE:$DOCKER_TAG bash -c \"$COMMAND\""
-    echo "Ejecutando el comando de Docker";
-    echo $DOCKER_COMMAND;
-    eval $DOCKER_COMMAND;
+    echo "Executing docker command";
+    echo "$DOCKER_COMMAND";
+    eval $DOCKER_COMMAND
 fi
+
