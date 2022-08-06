@@ -18,7 +18,7 @@ PROFILE="rpi-3"
 
 #A list of packages to embed into the image
 PHP_EXTENSIONS="php8-mod-iconv php8-mod-mbstring php8-mod-curl php8-mod-zip php8-mod-phar"
-PACKAGES="uhttpd luci php8 php8-cgi $PHP_EXTENSIONS"
+PACKAGES="uhttpd luci luci-ssl php8 php8-cgi $PHP_EXTENSIONS"
 
 #Directory with custom files to include
 FILES="$DOCKER_FOLDER/$INPUT_FILES_IMAGE" 	

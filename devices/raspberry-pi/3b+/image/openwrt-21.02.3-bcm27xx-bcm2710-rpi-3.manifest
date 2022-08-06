@@ -112,6 +112,7 @@ luci-mod-status - git-22.046.85784-0ac2542
 luci-mod-system - git-22.130.00635-21f99bd
 luci-proto-ipv6 - git-21.148.49484-14511e5
 luci-proto-ppp - git-21.163.64918-6c6559a
+luci-ssl - git-20.244.36115-e10f954
 luci-theme-bootstrap - git-22.084.39047-f1d687e
 mkf2fs - 1.14.0-1
 mtd - 26
@@ -132,6 +133,7 @@ php8-mod-zip - 8.0.20-1
 ppp - 2.4.8.git-2020-10-03-3
 ppp-mod-pppoe - 2.4.8.git-2020-10-03-3
 procd - 2021-03-08-2cfc26f8-1
+px5g-wolfssl - 3
 rpcd - 2022-02-19-8d26a1ba-1
 rpcd-mod-file - 2022-02-19-8d26a1ba-1
 rpcd-mod-iwinfo - 2022-02-19-8d26a1ba-1
