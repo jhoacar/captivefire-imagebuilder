@@ -4,23 +4,21 @@
 #!/bin/sh
 
 function setPhpIniConfiguration(){
-    sed -i "s/$1 = .*/$1 = $2/" /etc/php.ini
+    # sed -i "s/$1 = .*/$1 = $2/" /etc/php.ini
 }
 
 function setPhpIniDocRoot(){
-    setPhpIniConfiguration "doc\_root" " "
+    # setPhpIniConfiguration "doc\_root" " "
 }
 
 function disableSSHAccess(){
-    /etc/init.d/dropbear disable
-    /etc/init.d/dropbear stop
+    # /etc/init.d/dropbear disable
+    # /etc/init.d/dropbear stop
 }
 
 function disableLuciApp(){
-    uci set uhttpd.luci.home='www2'
-    /etc/init.d/uhttpd restart
+    # uci set uhttpd.luci.home='www2'
+    # /etc/init.d/uhttpd restart
 }
-
-setPhpIniDocRoot
 
 exit 0

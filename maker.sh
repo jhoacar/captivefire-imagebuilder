@@ -4,7 +4,7 @@
 
 DEVICES_FOLDER=$(pwd)/devices
 
-DEVICE="tl-mr3020/v3";
+DEVICE="raspberry-pi/3b+";
 
 # Specifies the target in docker image
 DOCKER_TAG=""
