@@ -48,8 +48,9 @@ function setSystemConfiguration(){
 
 function setNetworkConfiguration(){
     uci set network.lan.ipaddr='10.0.0.11'
-     uci set network.lan.netmask='255.255.0.0'
+    uci set network.lan.netmask='255.255.0.0'
     uci set network.lan.hostname="`uci get system.@system[0].hostname`"
+    uci set network.wwan.proto='dhcp'
 }
 
 function setDhcpRange(){
@@ -66,9 +67,11 @@ function setCaptivefireWireless(){
     uci del wireless.@wifi-iface[-1]
 
     # Enable radio
-    uci set wireless.radio0.disabled='0' 
+    uci set wireless.radio0.disabled='0'
+    uci del wireless.radio0.htmode
     uci set wireless.radio0.band='2g'
     uci set wireless.radio0.channel='auto'
+    uci set wireless.radio0.cell_density='0'
     
     uci set wireless.wifinet0=wifi-iface
     uci set wireless.wifinet0.device='radio0'
