@@ -2,9 +2,14 @@
 
 # Autor: Jhoan Carrero
 
-DEVICES_FOLDER=$(pwd)/devices
+if [ $# -eq 0 ]
+  then
+    DEVICE_FOLDER=$(pwd)/devices/raspberry-pi/3b+
+    echo -e "No arguments supplied \nUsing $DEVICE_FOLDER"
+else
+    DEVICE_FOLDER=$1
+fi
 
-DEVICE="raspberry-pi/3b+";
 
 # Specifies the target in docker image
 DOCKER_TAG=""
@@ -17,7 +22,7 @@ DOCKER_IMAGE="openwrtorg/imagebuilder"
 DOCKER_FOLDER="/home/build/builder"
 DOCKER_FOLDER_FILES="/home/build/files"
 
-HOST_FOLDER_DEVICE=$DEVICES_FOLDER/$DEVICE
+HOST_FOLDER_DEVICE=$DEVICE_FOLDER
 HOST_FOLDER_FILES=$(pwd)/files
 
 # A list of packages to embed into the image
@@ -48,7 +53,7 @@ COMMAND+="DISABLED_SERVICES='$DISABLED_SERVICES' "
 EXECUTE_DOCKER_COMMAND=1
 
 # Set variables as DOCKER_TAG PROFILE and so on...
-eval $(cat $DEVICES_FOLDER/$DEVICE/maker.sh)
+eval $(cat $DEVICE_FOLDER/maker.sh)
 
 # Execute docker command
 DOCKER_COMMAND="docker run --rm -v $HOST_FOLDER_FILES:$DOCKER_FOLDER_FILES -v $HOST_FOLDER_DEVICE:$DOCKER_FOLDER $DOCKER_IMAGE:$DOCKER_TAG bash -c \"$COMMAND\""
